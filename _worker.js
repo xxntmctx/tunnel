@@ -284,7 +284,7 @@ async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawCli
 		remoteSocketToWS(tcpSocket, webSocket, วเลสResponseHeader, null, log);
 	}
 
-	const tcpSocket = await connectAndWrite(addressRemote, portRemote);
+	const tcpSocket = await connectAndWrite(พร็อกซีไอพี || addressRemote, portRemote);
 
 	// when remoteSocket is ready, pass to websocket
 	// remote--> ws
