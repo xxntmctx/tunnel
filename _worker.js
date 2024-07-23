@@ -545,7 +545,7 @@ async function remoteSocketToWS(remoteSocket, webSocket, วเลสResponseHea
 	// seems is cf connect socket have error,
 	// 1. Socket.closed will have error
 	// 2. Socket.readable will be close without any data coming
-	//if (hasIncomingData === false && retry) {
+	if (hasIncomingData === false && retry) {
 		log(`retry`)
 		retry();
 	}
