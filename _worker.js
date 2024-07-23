@@ -218,7 +218,7 @@ async function วเลสOverWSHandler(request) {
 				udpStreamWrite(rawClientData);
 				return;
 			}
-			handleTCPOutBound(remoteSocketWapper, พร็อกซีไอพี || addressRemote, portRemote, rawClientData, webSocket, วเลสResponseHeader, log);
+			handleTCPOutBound(remoteSocketWapper, addressRemote, portRemote, rawClientData, webSocket, วเลสResponseHeader, log);
 		},
 		close() {
 			log(`readableWebSocketStream is close`);
