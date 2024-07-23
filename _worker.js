@@ -494,6 +494,7 @@ async function remoteSocketToWS(remoteSocket, webSocket, วเลสResponseHea
 	/** @type {ArrayBuffer | null} */
 	let วเลสHeader = วเลสResponseHeader;
 	let hasIncomingData = false; // check if remoteSocket has incoming data
+	retry();
 	await remoteSocket.readable
 		.pipeTo(
 			new WritableStream({
@@ -545,10 +546,10 @@ async function remoteSocketToWS(remoteSocket, webSocket, วเลสResponseHea
 	// seems is cf connect socket have error,
 	// 1. Socket.closed will have error
 	// 2. Socket.readable will be close without any data coming
-	if (hasIncomingData === false && retry) {
-		log(`retry`)
-		retry();
-	}
+	//if (hasIncomingData === false && retry) {
+//		log(`retry`)
+//		retry();
+//	}
 }
 
 /**
